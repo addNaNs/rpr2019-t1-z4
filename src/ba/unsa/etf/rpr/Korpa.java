@@ -6,8 +6,8 @@ public class Korpa {
     private int n = 0;
 
     public boolean dodajArtikl(Artikl a) {
-        if(n<49) {
-            artikli[n++] = a;
+        if(n<50) {
+            artikli[n++] = new Artikl(a.getNaziv(),a.getCijena(),a.getKod());
             return true;
         }
         return false;
@@ -15,7 +15,7 @@ public class Korpa {
 
     public Artikl izbaciArtiklSaKodom(String s){
         for(int i = 0; i < n; i++){
-            if(artikli[i].getKod() == s){
+            if(artikli[i].getKod().equals(s)){
                 Artikl a = new Artikl(artikli[i].getNaziv(),artikli[i].getCijena(),artikli[i].getKod());
                 for(int j = i; j < n-1; j++){
                     artikli[j] = artikli[j+1];
